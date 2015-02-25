@@ -7,6 +7,7 @@ package co.edu.unbosque.calculadora;
 
 import java.util.Stack;
 import co.edu.unbosque.calculadora.Calcular;
+import co.edu.unbosque.calculadora.Invocador;
 
 /**
  *
@@ -15,15 +16,14 @@ import co.edu.unbosque.calculadora.Calcular;
 public class Calculadora {
 
     public static void main(String[] args) {
+        /* ya no es necesario usar la clase evaluar */
+        System.out.println("");              
+        Invocador i = new Invocador();
         Parser p = new Parser();
-        Calcular calcular = new Calcular();
-        String expresion = new String();
-        double valor = 0;
-       expresion = "524/22+16/8";
+        String expresion = "3+2";
         String pos = p.parsear(expresion);
-        System.out.println(pos+"");
-        //String posfijo ="524 22 / 16 8 * + ";
-        System.out.println(calcular.evaluar(pos+" "));
+        System.out.println(pos);
+        System.out.println(i.evaluar(pos+" "));
         
         
     }
